@@ -1,0 +1,88 @@
+## WEBSITE
+
+https://adonisjs.com/
+
+## INSTALAÇÃO DO FRAMEWORK ADONIS
+
+  npm i -g @adonisjs/cli
+
+## CRIAÇÃO DE UM PROJETO
+
+  adonis new myapp --api-only
+
+## MODELOS
+
+## CONFIGURANDO A BASE DE DADOS
+
+  sudo systemctl start mariadb
+
+  sudo mysql --user root
+
+  CREATE DATABASE adonis;
+
+  CREATE USER 'adonis'@'localhost' IDENTIFIED WITH mysql_native_password;
+
+  FLUSH PRIVILEGES;
+
+  ALTER USER 'adonis'@'localhost' IDENTIFIED BY 'P@ssw0rd';
+
+  FLUSH PRIVILEGES;
+
+  GRANT ALL PRIVILEGES ON adonis.* TO 'adonis'@'localhost';
+
+  FLUSH PRIVILEGES;
+
+  select host, user, password from mysql.user;
+
+  use adonis;
+
+  ### CONFIGURAÇÃO .ENV, AJUSTAR OS CAMPOS CONFORME CADASTRO NA BASE DE DADOS
+
+      > DB_CONNECTION=mysql
+
+      > DB_USER=adonis
+
+      > DB_PASSWORD=P@ssw0rd
+
+      > DB_DATABASE=adonis
+
+  ### NO ARQUIVO DATABASE PRESENTE EM CONFIG, ALTERAR AS LINHAS PARA
+
+    CASO NÃO EXISTA UMA CONEXÃO EM .ENV
+    
+    > connection: Env.get('DB_CONNECTION', 'mysql');
+
+  npm i --save mysql
+
+## GERAÇÃO DE LOGS DE ERROS
+
+### CRIAÇÃO DO ARQUIVO RESPONSÁVEL PELO TRATAMENTO DOS ERROS
+
+> adonis make:ehandler
+
+  No arquivo App/Exceptions/Handler.js, instanciar a constante Logger, da seguinte forma:
+
+      > const Logger = use('Logger');
+
+  Ainda no arquivo Handle.js, modificar o método report da seguinte forma:
+
+  ```
+    async report(error, {
+      request
+    }) {
+      if (error.status >= 500) {
+        Logger.error(error.message, {
+          stack: error.stack,
+          message: error.message,
+          status: error.status,
+          name: error.name
+        });
+      }
+    }
+  ```
+
+  Em config/app.js, dentro do atributo logger, usar transport como file, pois queremos persistir o erro num arquivo.
+
+## CONTROLADORES
+
+## VISÕES
