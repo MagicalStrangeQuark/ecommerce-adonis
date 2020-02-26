@@ -1,6 +1,6 @@
 ## WEBSITE
 
-https://adonisjs.com/
+<https://adonisjs.com/>
 
 ## INSTALAÇÃO DO FRAMEWORK ADONIS
 
@@ -10,11 +10,27 @@ https://adonisjs.com/
 
   adonis new myapp --api-only
 
+## PACOTES
+
+Ao adicionarmos um novo pacote, no diretório `start/app.js`, na constante provider adicionar o caminho para o mesmo.
+
+> adonis install @adonisjs/mail
+
+> adonis install @adonisjs/validator
+
+> adonis install @adonisjs/websocket
+ 
+> adonis install @adonisjs/adonis-acl
+
+> adonis install adonis-acl                                                                              
+
+> adonis install adonis-bumblebee
+
 ## MODELOS
 
 ## CONFIGURANDO A BASE DE DADOS
 
-  sudo systemctl start mariadb
+  sudo systemctl start `mariadb`
 
   sudo mysql --user root
 
