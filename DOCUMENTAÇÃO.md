@@ -1,4 +1,8 @@
-## WEBSITE
+<p align="center">
+  <img src="https://adonisjs.com/images/favicons/favicon-196x196.png" width="400">
+</p>
+
+# WEBSITE
 
 <https://adonisjs.com/>
 
@@ -14,6 +18,8 @@
 
 Ao adicionarmos um novo pacote, no diretório `start/app.js`, na constante provider adicionar o caminho para o mesmo.
 
+> npm i --save mysql
+
 > adonis install @adonisjs/mail
 
 > adonis install @adonisjs/validator
@@ -23,7 +29,6 @@ Ao adicionarmos um novo pacote, no diretório `start/app.js`, na constante provi
 > adonis install @adonisjs/adonis-acl
 
 > adonis install adonis-acl                                                                              
-
 > adonis install adonis-bumblebee
 
 ## MODELOS
@@ -52,15 +57,15 @@ Ao adicionarmos um novo pacote, no diretório `start/app.js`, na constante provi
 
   use adonis;
 
-  ### CONFIGURAÇÃO .ENV, AJUSTAR OS CAMPOS CONFORME CADASTRO NA BASE DE DADOS
+  ### CONFIGURAÇÃO .ENV, AJUSTAR OS CAMPOS CONFORME CADASTRO PRÉVIA EFETUADO NA BASE DE DADOS
 
-      > DB_CONNECTION=mysql
+      > DB_CONNECTION=`mysql`
 
-      > DB_USER=adonis
+      > DB_USER=`adonis`
 
-      > DB_PASSWORD=P@ssw0rd
+      > DB_PASSWORD=`P@ssw0rd`
 
-      > DB_DATABASE=adonis
+      > DB_DATABASE=`adonis`
 
   ### NO ARQUIVO DATABASE PRESENTE EM CONFIG, ALTERAR AS LINHAS PARA
 
@@ -68,15 +73,11 @@ Ao adicionarmos um novo pacote, no diretório `start/app.js`, na constante provi
     
     > connection: Env.get('DB_CONNECTION', 'mysql');
 
-  npm i --save mysql
-
-## GERAÇÃO DE LOGS DE ERROS
-
-### CRIAÇÃO DO ARQUIVO RESPONSÁVEL PELO TRATAMENTO DOS ERROS
+## CRIAÇÃO DO ARQUIVO RESPONSÁVEL PELA PERSISTÊNCIA DOS LOGS DE ERROS
 
 > adonis make:ehandler
 
-  No arquivo App/Exceptions/Handler.js, instanciar a constante Logger, da seguinte forma:
+  No arquivo `App/Exceptions/Handler.js`, instanciar a constante `Logger`, da seguinte forma:
 
       > const Logger = use('Logger');
 
@@ -98,6 +99,10 @@ Ao adicionarmos um novo pacote, no diretório `start/app.js`, na constante provi
   ```
 
   Em config/app.js, dentro do atributo logger, usar transport como file, pois queremos persistir o erro num arquivo.
+
+## MIGRAÇÕES
+
+  > adonis make:migration MigrationName
 
 ## CONTROLADORES
 
