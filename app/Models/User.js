@@ -7,7 +7,7 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
-  static boot () {
+  static boot() {
     super.boot()
 
     /**
@@ -21,7 +21,22 @@ class User extends Model {
     })
   }
 
-  static get traits () {
+  /**
+   * Oculta os campos que forem retornados nesse array.
+   * 
+   * @method hidden
+   */
+  static get hidden() {
+    return ['password']
+  }
+
+
+  /**
+   * Retornas traits.
+   * 
+   * @method traits
+   */
+  static get traits() {
     return [
       '@provider:Adonis/Acl/HasRole',
       '@provider:Adonis/Acl/HasPermission'
@@ -38,8 +53,30 @@ class User extends Model {
    *
    * @return {Object}
    */
-  tokens () {
+  tokens() {
     return this.hasMany('App/Models/Token')
+  }
+
+  /**
+   * Retorna a imagem cadastrada para o usuário em questão.
+   * 
+   * @method image
+   * 
+   * @return {Object}
+   */
+  image() {
+    return this.belongsTo('App/Models/Image');
+  }
+
+  /**
+   * Retorna os cupons de desconto disponívels para o usuário em questão.
+   * 
+   * @method coupons
+   * 
+   * @return {Object}
+   */
+  coupons() {
+    return this.belongsToMany('App/Models/Coupon')
   }
 }
 

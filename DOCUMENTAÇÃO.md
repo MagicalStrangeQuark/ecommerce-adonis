@@ -28,7 +28,8 @@ Ao adicionarmos um novo pacote, no diretório `start/app.js`, na constante provi
  
 > adonis install @adonisjs/adonis-acl
 
-> adonis install adonis-acl                                                                              
+> adonis install adonis-acl     
+>                                                                          
 > adonis install adonis-bumblebee
 
 ## MODELOS
@@ -57,25 +58,52 @@ Ao adicionarmos um novo pacote, no diretório `start/app.js`, na constante provi
 
   use adonis;
 
-  ### CONFIGURAÇÃO .ENV, AJUSTAR OS CAMPOS CONFORME CADASTRO PRÉVIA EFETUADO NA BASE DE DADOS
+## CONFIGURAÇÃO .ENV, AJUSTAR OS CAMPOS CONFORME CADASTRO PRÉVIA EFETUADO NA BASE DE DADOS
 
-      > DB_CONNECTION=`mysql`
+  > DB_CONNECTION=`mysql`
 
-      > DB_USER=`adonis`
+  > DB_USER=`adonis`
 
-      > DB_PASSWORD=`P@ssw0rd`
+  > DB_PASSWORD=`P@ssw0rd`
 
-      > DB_DATABASE=`adonis`
+  > DB_DATABASE=`adonis`
 
-  ### NO ARQUIVO DATABASE PRESENTE EM CONFIG, ALTERAR AS LINHAS PARA
+## NO ARQUIVO DATABASE PRESENTE EM CONFIG, ALTERAR AS LINHAS PARA
 
-    CASO NÃO EXISTA UMA CONEXÃO EM .ENV
-    
-    > connection: Env.get('DB_CONNECTION', 'mysql');
+  CASO NÃO EXISTA UMA CONEXÃO EM .ENV
+  
+  > connection: Env.get('DB_CONNECTION', 'mysql');
+
+## CRIAÇÃO DE UM MODELO
+
+  > adonis make:model
+
+## OCULTAÇÃO CAMPOS AO CONSULTAR BASE DE DADOS
+
+Dentro do modelo da classe em questão, é possível chamar o método `hidden`, retornando os campos que não serão retornados na busca.
+
+Exemplo: Não queremos retornar o campo `password`, nesse caso, o código seria o eguinte:
+
+```
+  static get hidden() {
+    return ['password']
+  }
+
+```
+
+## FORMATAÇÃO DOS CAMPOS RELATIVO À DATAS
+
+Exemplo: Queremos que o campo `expires_at` seja tratado como uma data ao salvar na nossa base de dados.
+
+```
+  static get dates() {
+    return super.dates.concat(['expires_at'])
+  }
+```
 
 ## CRIAÇÃO DO ARQUIVO RESPONSÁVEL PELA PERSISTÊNCIA DOS LOGS DE ERROS
 
-> adonis make:ehandler
+  > adonis make:ehandler
 
   No arquivo `App/Exceptions/Handler.js`, instanciar a constante `Logger`, da seguinte forma:
 
