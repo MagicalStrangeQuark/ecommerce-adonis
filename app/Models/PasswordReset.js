@@ -16,7 +16,7 @@ class PasswordReset extends Model {
   }
 
   /**
-   * Método responsável pela formatação do formato UNIX para TIMESTAMP próprio do banco de dados.
+   * Método responsável pela formatação da data no formato UNIX para TIMESTAMP próprio do banco de dados.
    * 
    * @method dates
    * 
