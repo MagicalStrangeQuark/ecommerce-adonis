@@ -10,7 +10,7 @@ class CategorySchema extends Schema {
       table.increments()
       table.string('title', 64).notNullable()
       table.string('description', 256).notNullable()
-      table.integer('image_id').unsigned().notNullable()
+      table.integer('image_id').unsigned()
       table.timestamps()
 
       table

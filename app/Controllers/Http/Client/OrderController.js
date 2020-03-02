@@ -3,39 +3,29 @@
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
-const Category = use('App/Models/Category')
 
 /**
- * Resourceful controller for interacting with categories
+ * Resourceful controller for interacting with orders
  */
-class CategoryController {
+class OrderController {
   /**
-   * Show a list of all categories.
-   * GET categories
+   * Show a list of all orders.
+   * GET orders
    *
    * @param {object} ctx
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    * @param {View} ctx.view
-   * @param {Object} ctx.pagination
    */
   async index({
     request,
     response,
-    view,
-    pagination
-  }) {
-    /**
-     * Número da página que gostaríamos de retornar
-     * Número de registros retornados na página em questão (por página)
-     */
-    const categories = await Category.query().paginate(pagination.page, pagination.limit)
-    return response.send(categories)
-  }
+    view
+  }) {}
 
   /**
-   * Render a form to be used for creating a new category.
-   * GET categories/create
+   * Render a form to be used for creating a new order.
+   * GET orders/create
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -49,8 +39,8 @@ class CategoryController {
   }) {}
 
   /**
-   * Create/save a new category.
-   * POST categories
+   * Create/save a new order.
+   * POST orders
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -62,8 +52,8 @@ class CategoryController {
   }) {}
 
   /**
-   * Display a single category.
-   * GET categories/:id
+   * Display a single order.
+   * GET orders/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -78,8 +68,8 @@ class CategoryController {
   }) {}
 
   /**
-   * Render a form to update an existing category.
-   * GET categories/:id/edit
+   * Render a form to update an existing order.
+   * GET orders/:id/edit
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -94,8 +84,8 @@ class CategoryController {
   }) {}
 
   /**
-   * Update category details.
-   * PUT or PATCH categories/:id
+   * Update order details.
+   * PUT or PATCH orders/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -108,8 +98,8 @@ class CategoryController {
   }) {}
 
   /**
-   * Delete a category with id.
-   * DELETE categories/:id
+   * Delete a order with id.
+   * DELETE orders/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -122,4 +112,4 @@ class CategoryController {
   }) {}
 }
 
-module.exports = CategoryController
+module.exports = OrderController

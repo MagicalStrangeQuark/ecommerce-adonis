@@ -22,49 +22,62 @@ Route.get('/', () => {
   }
 })
 
-/**
- *  Controlador de Categorias
- */
-Route.resource('categories', 'CategoryController')
+Route.group(() => {
+  /**
+   * Controlador de Categorias
+   */
+  Route.resource('categories', 'CategoryController')
+
+  /**
+   * Controlador de Produtos
+   */
+  Route.resource('products', 'ProductController')
+
+  /**
+   * 
+   */
+  Route.resource('coupon', 'CouponController')
+
+  /**
+   * 
+   */
+  Route.resource('images', 'ImageController')
+
+  /**
+   * 
+   */
+  Route.resource('users', 'UserController')
+
+  /**
+   * 
+   */
+  Route.resource('orders', 'OrderController')
+}).prefix('v1/admin').namespace('Admin')
 
 /**
- * Controlador de Produtos
- */
-Route.resource('products', 'ProductController')
-
-/**
- * 
- */
-Route.resource('coupon', 'CouponController')
-
-/**
- * 
- */
-Route.resource('images', 'ImageController')
-
-/**
- * 
- */
-Route.resource('users', 'UserController')
-
-/**
- * 
- */
-Route.resource('orders', 'OrderController')
-
-/**
- * Realiza o agrupamento das rotas iniciando por /v1/auth
+ * Realiza o agrupamento das rotas de cliente, agrupadas por v1
  */
 Route.group(() => {
-    Route.post("/register", "AuthController.register").as('auth.register')
-    Route.post('/login', 'AuthController.login').as('auth.login')
-    Route.post('/refresh', 'AuthController.refresh').as('auth.refresh')
-    Route.post('/logout', 'AuthController.logout').as('auth.logout')
+  Route.get('products', 'ProductController.index')
+  Route.get('products/:id', 'ProductController.show')
 
-    // restore password routes
-    Route.post('reset-password', 'AuthController.forgot').as('auth.forgot')
-    Route.get('reset-password', 'AuthController.remember').as('auth.remember')
-    Route.put('reset-password', 'AuthController.reset').as('auth.reset')
-  })
-  .prefix("v1/auth")
-  .namespace("Auth")
+  Route.get('orders', 'OrderController.index')
+  Route.get('orders/:id', 'OrderController.show')
+  Route.post('orders', 'OrderController.store')
+  Route.put('orders/:id', 'OrderController.update')
+}).prefix("v1").namespace('Client')
+
+/**
+ * Realiza o agrupamento das rotas iniciando por v1/auth
+ */
+Route.group(() => {
+  Route.post("/register", "AuthController.register").as('auth.register')
+  Route.post('/login', 'AuthController.login').as('auth.login')
+  Route.post('/refresh', 'AuthController.refresh').as('auth.refresh')
+  Route.post('/logout', 'AuthController.logout').as('auth.logout')
+
+  // restore password routes
+  Route.post('reset-password', 'AuthController.forgot').as('auth.forgot')
+  Route.get('reset-password', 'AuthController.remember').as('auth.remember')
+  Route.put('reset-password', 'AuthController.reset').as('auth.reset')
+}).prefix("v1/auth").namespace("Auth")
