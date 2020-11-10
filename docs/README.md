@@ -38,6 +38,7 @@
     
     adonis serve --dev
 ```
+
 <h6 align="center">🍻 Open in Browser</h6>
 
 ```bash
