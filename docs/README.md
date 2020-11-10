@@ -17,8 +17,29 @@
     </a>
 </p>
 
-<h6 align="center">Framework Installation</h6>
+<h6 align="center">🥂 Framework Installation</h6>
 
 ```bash
-  npm i -g @adonisjs/cli
+    npm install -g @adonisjs/cli
+```
+
+```bash
+    adonis --version
+```
+
+```bash
+    adonis new app --api-only
+```
+
+<h6 align="center">🍾 Start</h6>
+
+```bash
+    cd app
+    
+    adonis serve --dev
+```
+<h6 align="center">🍻 Open in Browser</h6>
+
+```bash
+    http://127.0.0.1:3333
 ```
