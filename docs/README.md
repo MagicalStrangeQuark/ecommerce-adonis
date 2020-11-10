@@ -44,3 +44,13 @@
 ```bash
     http://127.0.0.1:3333
 ```
+
+<h6 align="center">🌂 MySQL Connection</h6>
+
+```sql
+    \connect root@localhost
+```
+
+```sql
+    \sql
+```
