@@ -20,29 +20,29 @@
 <h6 align="center">🥂 Framework Installation</h6>
 
 ```bash
-    npm install -g @adonisjs/cli
+  npm install -g @adonisjs/cli
 ```
 
 ```bash
-    adonis --version
+  adonis --version
 ```
 
 ```bash
-    adonis new app --api-only
+  adonis new app --api-only
 ```
 
 <h6 align="center">🍾 Start</h6>
 
 ```bash
-    cd app
+  cd app
     
-    adonis serve --dev
+  adonis serve --dev
 ```
 
 <h6 align="center">🍻 Open in Browser</h6>
 
 ```bash
-    http://127.0.0.1:3333
+  http://127.0.0.1:3333
 ```
 
 <h6 align="center">🌂 MySQL Connection</h6>
@@ -62,13 +62,17 @@
 <h6 align="center">Windows</h6>
 
 ```bash
-    mysqlsh
+  Set-ExecutionPolicy -Scope "CurrentUser" -ExecutionPolicy "RemoteSigned"
+```
+
+```bash
+  mysqlsh
 ```
 
 ```sql
-    \connect root@localhost
+  \connect root@localhost
 
-    \sql
+  \sql
 ```
 
 <h6 align="center">MySQL</h6>
