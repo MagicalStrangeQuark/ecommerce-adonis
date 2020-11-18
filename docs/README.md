@@ -1,6 +1,6 @@
 <p align="center"><a href="https://adonisjs.com"><p align="center"><img src="../adonis-js-seeklogo.com.svg" width="400"></p></a></p>
 
-<p align="center">Development of an Ecommerce Using the Adonis.js Framework</p>
+<p align="center">Development of an Ecommerce Using the 🚀<a href="https://adonisjs.com">Adonis.js</a> Framework</p>
 
 <p align="center">
     <a href="https://opensource.org/licenses/MIT">
@@ -91,4 +91,44 @@
   select host, user, authentication_string from mysql.user;
 
   USE adonis;
+```
+
+<h6 align="center">Configurando .ENV: Ajustar os campos conforme o cadastro prévio efetuado na base de dados</h6>
+
+```bash
+  DB_CONNECTION=`mysql`
+
+  DB_USER=`adonis`
+
+  DB_PASSWORD=`secret`
+
+  DB_DATABASE=`adonis`
+```
+
+<h6 align="center">No arquivo <app\config\database.js>, alterar as linhas para caso não haja conexão definida em .ENV</h6>
+
+```bash
+  connection: Env.get('DB_CONNECTION', 'mysql');
+```
+
+<h6 align="center">Packages</h6>
+
+<h6 align="center">Ao adicionarmos um novo pacote, no diretório start/app.js, na constante provider adicionar o caminho para o mesmo.</h6>
+
+```bash
+  npm i --save mysql
+```
+
+```bash
+  adonis install @adonisjs/mail
+
+  adonis install @adonisjs/validator
+
+  adonis install @adonisjs/websocket
+  
+  adonis install @adonisjs/adonis-acl
+
+  adonis install adobis-acl
+
+  adonis install adonis-bumblebee
 ```
