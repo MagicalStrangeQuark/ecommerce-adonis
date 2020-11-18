@@ -47,10 +47,48 @@
 
 <h6 align="center">🌂 MySQL Connection</h6>
 
-```sql
-    \connect root@localhost
+<h3 align="center">Modelos</h3>
+
+<h3 align="center">Configurando o banco de dados</h3>
+
+<h6 align="center">Manjaro</h6>
+
+```bash
+  sudo systemctl start `mariadb`
+
+  sudo mysql --user root
+```
+
+<h6 align="center">Windows</h6>
+
+```bash
+    mysqlsh
 ```
 
 ```sql
+    \connect root@localhost
+
     \sql
+```
+
+<h6 align="center">MySQL</h6>
+
+```sql
+  CREATE DATABASE adonis;
+
+  CREATE USER 'adonis'@'localhost' IDENTIFIED WITH mysql_native_password;
+
+  FLUSH PRIVILEGES;
+
+  ALTER USER 'adonis'@'localhost' IDENTIFIED BY 'secret';
+
+  FLUSH PRIVILEGES;
+
+  GRANT ALL PRIVILEGES ON adonis.* TO 'adonis'@'localhost';
+
+  FLUSH PRIVILEGES;
+
+  select host, user, authentication_string from mysql.user;
+
+  USE adonis;
 ```
