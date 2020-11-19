@@ -54,7 +54,7 @@
 <h6 align="center">Manjaro</h6>
 
 ```bash
-  sudo systemctl start `mariadb`
+  sudo systemctl start mariadb
 
   sudo mysql --user root
 ```
@@ -100,13 +100,13 @@
 <h6 align="center">Configurando .ENV: Ajustar os campos conforme o cadastro prévio efetuado na base de dados</h6>
 
 ```bash
-  DB_CONNECTION=`mysql`
+  DB_CONNECTION=mysql
 
-  DB_USER=`adonis`
+  DB_USER=adonis
 
-  DB_PASSWORD=`secret`
+  DB_PASSWORD=secret
 
-  DB_DATABASE=`adonis`
+  DB_DATABASE=adonis
 ```
 
 <h6 align="center">No arquivo <app\config\database.js>, alterar as linhas para caso não haja conexão definida em .ENV</h6>
