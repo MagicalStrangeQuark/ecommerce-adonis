@@ -136,3 +136,34 @@
 
   adonis install adonis-bumblebee
 ```
+
+<h6 align="center">Criação do arquivo responsável pela persistência dos logs de erros</h6>
+
+```bash
+  adonis make:ehandler
+```
+
+No arquivo `app\app\Exceptions\Handler.js`, instanciar a constante `Logger`, da seguinte forma:
+
+```bash
+  const Logger = use('Logger');
+```
+
+Ainda no arquivo `Handle.js`, modificar o método report da seguinte forma:
+
+```javascript
+  async report(error, {
+    request
+  }) {
+    if (error.status >= 500) {
+      Logger.error(error.message, {
+        stack: error.stack,
+        message: error.message,
+        status: error.status,
+        name: error.name
+      });
+    }
+  }
+```
+
+Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file`, pois queremos persistir o erro num arquivo.
