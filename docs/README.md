@@ -97,7 +97,7 @@
   USE adonis;
 ```
 
-<h6 align="center">Configurando .ENV: Ajustar os campos conforme o cadastro prévio efetuado na base de dados</h6>
+<h6 align="center">Configurando .env: ajustar os campos conforme a configuração prévia efetuada na base de dados</h6>
 
 ```bash
   DB_CONNECTION=mysql
@@ -109,7 +109,7 @@
   DB_DATABASE=adonis
 ```
 
-<h6 align="center">No arquivo <app\config\database.js>, alterar as linhas para caso não haja conexão definida em .ENV</h6>
+<h6 align="center">No arquivo app\config\database.js, alterar as linhas para caso não haja conexão definida em .env</h6>
 
 ```bash
   connection: Env.get('DB_CONNECTION', 'mysql');
