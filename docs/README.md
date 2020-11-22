@@ -204,6 +204,10 @@ Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file
   adonis make:migration PasswordReset [create]
 ```
 
+```bash
+  adonis migration:run
+```
+
 <h6 align="center">Models</h6>
 
 ```bash
