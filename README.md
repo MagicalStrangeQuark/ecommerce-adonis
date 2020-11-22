@@ -213,3 +213,29 @@ Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file
 ```bash
   adonis make:model
 ```
+
+<h4 align="center">Escondendo campos ao realizar uma consulta à base de dados</h4>
+
+<p align="center">Dentro do modelo da classe em questão, é possível chamar o método hidden, retornando os campos que não serão retornados na busca.</p>
+
+<p align="center">Exemplo: Não queremos retornar o campo password, nesse caso, o código seria o seguinte:</p>
+
+```bash
+  static get hidden() {
+    return ['password']
+  }
+```
+
+<h6 align="center">Formatação dos campos relativo à datas</h6>
+
+Exemplo: Queremos que o campo `expires_at` seja tratado como uma data ao salvar na nossa base de dados.
+
+```bash
+  static get dates() {
+    return super.dates.concat(['expires_at'])
+  }
+```
+
+<h6 align="center">Controllers</h6>
+
+<h6 align="center">Views</h6>
