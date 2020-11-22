@@ -1,4 +1,4 @@
-<p align="center"><a href="https://adonisjs.com"><p align="center"><img src="../adonis-js-seeklogo.com.svg" width="400"></p></a></p>
+<p align="center"><a href="https://adonisjs.com"><p align="center"><img src="adonis-js-seeklogo.com.svg" width="400"></p></a></p>
 
 <p align="center">Development of an Ecommerce Using the 🚀<a href="https://adonisjs.com">Adonis.js</a> Framework</p>
 
