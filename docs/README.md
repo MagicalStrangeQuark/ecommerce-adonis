@@ -198,6 +198,10 @@ Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file
   adonis make:migration OrderItem [create]
 
   adonis make:migration CouponUser [create]
+
+  adonis make:migration CouponProduct [create]
+
+  adonis make:migration PasswordReset [create]
 ```
 
 <h6 align="center">Models</h6>
