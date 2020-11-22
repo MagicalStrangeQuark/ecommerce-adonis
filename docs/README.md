@@ -188,6 +188,10 @@ Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file
   adonis make:migration Category [create]
 
   adonis make:migration Product [create]
+
+  adonis make:migration Coupon [create]
+
+  adonis make:migration Order [create]
 ```
 
 <h6 align="center">Models</h6>
