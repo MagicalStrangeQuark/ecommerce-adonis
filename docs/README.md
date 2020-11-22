@@ -125,15 +125,25 @@
 
 ```bash
   adonis install @adonisjs/mail
+```
 
+```bash
   adonis install @adonisjs/validator
+```
 
+```bash
   adonis install @adonisjs/websocket
-  
-  adonis install @adonisjs/adonis-acl
+```
 
-  adonis install adobis-acl
+```bash
+  npm i adonis-acl --save
+```
 
+```bash
+  adonis acl:setup
+```
+
+```bash 
   adonis install adonis-bumblebee
 ```
 
@@ -167,3 +177,21 @@ Ainda no arquivo `Handle.js`, modificar o método report da seguinte forma:
 ```
 
 Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file`, pois queremos persistir o erro num arquivo.
+
+<h6 align="center">Migrations</h6>
+
+```bash
+  adonis make:migration Image [create]
+
+  adonis make:migration UserImageFk [select]
+
+  adonis make:migration Category [create]
+
+  adonis make:migration Product [create]
+```
+
+<h6 align="center">Models</h6>
+
+```bash
+  adonis make:model
+```
