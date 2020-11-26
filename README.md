@@ -212,6 +212,8 @@ Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file
 
 ```bash
   adonis make:model PasswordReset
+
+  adonis make:model Image
 ```
 
 <h4 align="center">Escondendo campos ao realizar uma consulta à base de dados</h4>
