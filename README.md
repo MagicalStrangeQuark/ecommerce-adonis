@@ -47,7 +47,7 @@
 
 <h6 align="center">🌂 MySQL Connection</h6>
 
-<h3 align="center">Modelos</h3>
+<h3 align="center">Models</h3>
 
 <h3 align="center">Configurando o banco de dados</h3>
 
@@ -218,6 +218,10 @@ Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file
   adonis make:model PasswordReset
 
   adonis make:model Image
+
+  adonis make:model Category
+
+  adonis make:model Product
 ```
 
 <h4 align="center">Escondendo campos ao realizar uma consulta à base de dados</h4>
