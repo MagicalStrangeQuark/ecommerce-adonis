@@ -222,6 +222,10 @@ Em `app\config\app.js`, dentro do atributo `logger`, usar `transport` como `file
   adonis make:model Category
 
   adonis make:model Product
+
+  adonis make:model Coupon
+
+  adonis make:model Discount
 ```
 
 <h4 align="center">Escondendo campos ao realizar uma consulta à base de dados</h4>
