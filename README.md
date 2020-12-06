@@ -258,6 +258,8 @@ Exemplo: Queremos que o campo `expires_at` seja tratado como uma data ao salvar 
 
 ```bash
   adonis make:hook Order
+
+  adonis make:hook OrderItem
 ```
 
 <h6 align="center">Controllers</h6>
