@@ -7,6 +7,16 @@ class Order extends Model {
     /**
      * 
      */
+    static boot() {
+        super.boot();
+
+        this.addHook('afterFind', 'OrderHook.updateValues');
+        this.addHook('afterPaginate', 'OrderHook.updateCollectionValues');
+    }
+
+    /**
+     * 
+     */
     items() {
         return this.hasMany('App/Models/OrderItem');
     }
